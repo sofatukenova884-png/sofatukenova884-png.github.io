@@ -4,12 +4,6 @@
     box-sizing: border-box;
 }
 
-.content {
-    max-width: 1432px; 
-    margin: 0 auto;    
-    padding: 0 15px;
-}
-
 :root{
     --color-primary:#262a2f;
     --color-accent:#ff5533;
@@ -22,47 +16,45 @@
     font-family: 'Rubik';
     src: url('Rubik/static/Rubik-Regular.ttf') format('truetype');
     font-weight: 400;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'Rubik';
     src: url('Rubik/static/Rubik-Bold.ttf') format('truetype');
     font-weight: 700;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'Rubik';
     src: url('Rubik/static/Rubik-SemiBold.ttf') format('truetype');
     font-weight: 600;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'Rubik';
     src: url('Rubik/static/Rubik-Black.ttf') format('truetype');
     font-weight: 900;
-    font-style: normal;
 }
 
 body{
     font-family: Rubik, sans-serif;
-    position: relative;
     background: #ebebeb;
-    font-weight: 400;
     font-size: 22px;
+    overflow-x: hidden; 
+}
+
+
+.content {
+    max-width: 1432px;
+    margin: 0 auto; 
+    padding-top: 28px;
 }
 
 .grid{
     display: grid;
     grid-template-columns: repeat(12, var(--grid-column-width));
-    gap:var(--grid-gap);
-}
-
-.content{
-    padding: 0px;
-    padding-top: 28px;
+    gap: var(--grid-gap);
+    justify-content: center; 
 }
 
 .menu{
@@ -72,36 +64,31 @@ body{
     width: 100%;       
     display: flex;
     align-items: center;
-    justify-content: flex-start; 
-    flex-wrap: nowrap;
-}
-
-.logo{
-    width: 500px; 
-    display: flex;
-    align-items: center;
-}
-
-.logo1{
-    width: 100px; 
-    transform: scale(1.6);
-    transform-origin: left center;
-}
-
-.logo2{
-    width: 160px; 
 }
 
 .menu-el{
-    font-family: Rubik, sans-serif ;
+    display: flex; 
+    align-items: center;
+    margin: 30px;
     font-weight: 900;
     font-size: 24px;
-    text-align: center;
-    margin: 0 40px; 
 }
 
-.menu-el:first-of-type {
-    margin-left: 80px; 
+.navigation__logo{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.navigation__logo-image {
+    height: 80px; 
+}
+
+.navigation__list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
 }
 
 .nav__link{
@@ -115,10 +102,6 @@ body{
 
 .nav__link:hover{
     color:var(--color-accent);
-}
-
-.container{
-    margin: 0 auto;
 }
 
 .articles{
@@ -175,35 +158,20 @@ body{
 
 .article-date{
     font-weight: 500;
-    line-height: 24px;
     text-transform: uppercase;
     color: var(--color-accent);
 }
 
-.main-article__category{
-    margin-bottom: 7px;
-}
-
 .main-article__title{
     font-size: 42px;
-    line-height: 50px;
     font-weight: 700;
     margin-bottom: 34px;
-    display:-webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden; 
 }
 
 .main-article__text{
     font-size: 22px;
-    line-height: 26px;
     color: var(--color-primary);
-    margin-bottom: 34px ;
-    display:-webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    margin-bottom: 34px;
 }
 
 .small-article{
@@ -219,17 +187,8 @@ body{
 .small-articlle__title{
     font-weight: 700;
     font-size: 20px;
-    line-height: 24px;
     color:var(--color-primary);
     margin-bottom: 14px;
-    display:-webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.article-date + .article-source::before{
-    content:'·' ;
 }
 
 .footer {
@@ -239,15 +198,12 @@ body{
     margin-top: 100px;
 }
 
-.footer__column, 
-.footer .menu {
+.footer__column{
     max-width: 1432px;
     margin: 0 auto;
-    padding: 0; 
-}
-
-.footer .menu {
-    justify-content: flex-start;
+    margin-top: 23px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav__link2{
@@ -259,16 +215,8 @@ body{
     color:var(--color-accent);
 }
 
-.footer__column{
-    margin-top: 23px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
 .footer__text{
     font-size: 24px;
-    line-height: 28px;
     color: white;
 }
 
@@ -280,6 +228,5 @@ body{
 
 .footer__copyright{
     font-size: 24px;
-    line-height: 28px;
     color: var(--color-grey);
 }
